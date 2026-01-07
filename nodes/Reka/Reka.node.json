@@ -1,0 +1,19 @@
+
+{
+	"node": "n8n-nodes-base.reka",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Miscellaneous"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.reka.ai/quick-start"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.reka.ai"
+			}
+		]
+	}
+}
