@@ -43,15 +43,15 @@ export class Reka implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Astronomy Picture of the Day',
-						value: 'astronomyPictureOfTheDay',
+						name: 'Create Clip',
+						value: 'createClips',
 					},
 					{
-						name: 'Mars Rover Photos',
-						value: 'marsRoverPhotos',
+						name: 'Get Clip Status',
+						value: 'getClipStatus',
 					},
 				],
-				default: 'astronomyPictureOfTheDay',
+				default: 'createClips',
 			},
 			// Operations will go here
 			{
@@ -61,24 +61,24 @@ export class Reka implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: ['astronomyPictureOfTheDay'],
+						resource: ['createClips'],
 					},
 				},
 				options: [
 					{
-						name: 'Get',
-						value: 'get',
-						action: 'Get the APOD',
-						description: 'Get the Astronomy Picture of the day',
+						name: 'POST',
+						value: 'post',
+						action: 'Create a clip',
+						description: 'Create a new clip job on Reka side',
 						routing: {
 							request: {
-								method: 'GET',
-								url: '/planetary/apod',
+								method: 'POST',
+								url: '/creator/reels',
 							},
 						},
 					},
 				],
-				default: 'get',
+				default: 'post',
 			},
 			{
 				displayName: 'Operation',
@@ -87,15 +87,15 @@ export class Reka implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: ['marsRoverPhotos'],
+						resource: ['getClipStatus'],
 					},
 				},
 				options: [
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Get Mars Rover photos',
-						description: 'Get photos from the Mars Rover',
+						action: 'Get clip status',
+						description: 'Get the status of a clip job on Reka side',
 						routing: {
 							request: {
 								method: 'GET',
@@ -106,80 +106,76 @@ export class Reka implements INodeType {
 				default: 'get',
 			},
 			{
-				displayName: 'Rover name',
-				description: 'Choose which Mars Rover to get a photo from',
+				displayName: 'Job ID',
+				description: 'With Job to get the status for',
 				required: true,
-				name: 'roverName',
-				type: 'options',
-				options: [
-					{ name: 'Curiosity', value: 'curiosity' },
-					{ name: 'Opportunity', value: 'opportunity' },
-					{ name: 'Perseverance', value: 'perseverance' },
-					{ name: 'Spirit', value: 'spirit' },
-				],
+				name: 'jobId',
+				type: 'string',
 				routing: {
 					request: {
-						url: '=/mars-photos/api/v1/rovers/{{$value}}/photos',
-					},
+						qs: {
+							id: '/{{$value}}'
+						}
+					}
 				},
-				default: 'curiosity',
-				displayOptions: {
-					show: {
-						resource: ['marsRoverPhotos'],
-					},
-				},
-			},
-			{
-				displayName: 'Date',
-				description: 'Earth date',
-				required: true,
-				name: 'marsRoverDate',
-				type: 'dateTime',
 				default: '',
 				displayOptions: {
 					show: {
-						resource: ['marsRoverPhotos'],
-					},
-				},
-				routing: {
-					request: {
-						// You've already set up the URL. qs appends the value of the field as a query string
-						qs: {
-							earth_date: '={{ new Date($value).toISOString().substr(0,10) }}',
-						},
+						resource: ['getClipStatus'],
 					},
 				},
 			},
+			// {
+			// 	displayName: 'Date',
+			// 	description: 'Earth date',
+			// 	required: true,
+			// 	name: 'marsRoverDate',
+			// 	type: 'dateTime',
+			// 	default: '',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['marsRoverPhotos'],
+			// 		},
+			// 	},
+			// 	routing: {
+			// 		request: {
+			// 			// You've already set up the URL. qs appends the value of the field as a query string
+			// 			qs: {
+			// 				earth_date: '={{ new Date($value).toISOString().substr(0,10) }}',
+			// 			},
+			// 		},
+			// 	},
+			// },
 			// Optional/additional fields will go here
-			{
-				displayName: 'Additional Fields',
-				name: 'additionalFields',
-				type: 'collection',
-				default: {},
-				placeholder: 'Add Field',
-				displayOptions: {
-					show: {
-						resource: ['astronomyPictureOfTheDay'],
-						operation: ['get'],
-					},
-				},
-				options: [
-					{
-						displayName: 'Date',
-						name: 'apodDate',
-						type: 'dateTime',
-						default: '',
-						routing: {
-							request: {
-								// You've already set up the URL. qs appends the value of the field as a query string
-								qs: {
-									date: '={{ new Date($value).toISOString().substr(0,10) }}',
-								},
-							},
-						},
-					},
-				],
-			},
+			// {
+			// 	displayName: 'Additional Fields',
+			// 	name: 'additionalFields',
+			// 	type: 'collection',
+			// 	default: {},
+			// 	placeholder: 'Add Field',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['astronomyPictureOfTheDay'],
+			// 			operation: ['get'],
+			// 		},
+			// 	},
+			// 	options: [
+			// 		{
+			// 			displayName: 'Date',
+			// 			name: 'apodDate',
+			// 			type: 'dateTime',
+			// 			default: '',
+			// 			routing: {
+			// 				request: {
+			// 					// You've already set up the URL. qs appends the value of the field as a query string
+			// 					qs: {
+			// 						date: '={{ new Date($value).toISOString().substr(0,10) }}',
+			// 					},
+			// 				},
+			// 			},
+			// 		},
+			// 	],
+			// },
 		],
 	};
 }

@@ -32,8 +32,8 @@ export class RekaApi implements ICredentialType {
 	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
 		properties: {
-			qs: {
-				api_key: '={{$credentials.apiKey}}',
+			headers: {
+				'X-API-KEY': '={{$credentials.apiKey}}',
 			},
 		},
 	};
