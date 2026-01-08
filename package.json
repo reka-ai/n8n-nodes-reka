@@ -34,7 +34,7 @@
 			"dist/credentials/RekaApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Reka/Reka.node.js"
+			"dist/nodes/Reka/Vision/RekaVision.node.js"
 		]
 	},
 	"devDependencies": {

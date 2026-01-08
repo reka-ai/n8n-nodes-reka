@@ -1,15 +1,15 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { clipDescription } from './resources/clip';
 
-export class Reka implements INodeType {
+export class RekaVision implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
-		displayName: 'Reka AI',
-		name: 'reka',
+		displayName: 'Reka Vision',
+		name: 'rekaVision',
 
 		icon: {
-			light: 'file:../../icons/reka-stacked-black.svg',
-			dark: 'file:../../icons/reka-stacked-offwhite.svg',
+			light: 'file:../../../icons/reka-stacked-black.svg',
+			dark: 'file:../../../icons/reka-stacked-offwhite.svg',
 		},
 
 		group: ['transform'],
@@ -17,7 +17,7 @@ export class Reka implements INodeType {
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'Get data from Reka AI APIs',
 		defaults: {
-			name: 'Reka AI',
+			name: 'Reka Vision',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
@@ -36,7 +36,6 @@ export class Reka implements INodeType {
 		},
 		usableAsTool: true,
 		properties: [
-			// Resources and operations will go here
 			{
 				displayName: 'Resource',
 				name: 'resource',
@@ -44,18 +43,17 @@ export class Reka implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Create Clip 3',
+						name: 'Create Clip',
 						value: 'createClips',
 					},
 					{
-						name: 'Get Clip Status 3',
+						name: 'Get Clip Status',
 						value: 'getClipStatus',
 					},
 				],
 				default: 'createClips',
 			},
-			...clipDescription
-
+			...clipDescription,
 		],
 	};
 }
