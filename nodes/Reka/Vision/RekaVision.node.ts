@@ -1,0 +1,60 @@
+import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { clipDescription } from './resources/clip';
+
+export class RekaVision implements INodeType {
+	description: INodeTypeDescription = {
+		// Basic node details will go here
+		displayName: 'Reka Vision',
+		name: 'rekaVision',
+
+		icon: {
+			light: 'file:../../../icons/reka-stacked-black.svg',
+			dark: 'file:../../../icons/reka-stacked-offwhite.svg',
+		},
+
+		group: ['transform'],
+		version: 1,
+		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
+		description: 'Get data from Reka AI APIs',
+		defaults: {
+			name: 'Reka Vision',
+		},
+		inputs: ['main'],
+		outputs: ['main'],
+		credentials: [
+			{
+				name: 'rekaApi',
+				required: true,
+			},
+		],
+		requestDefaults: {
+			baseURL: 'https://vision-agent.api.reka.ai/v1',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+		},
+		usableAsTool: true,
+		properties: [
+			{
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				noDataExpression: true,
+				options: [
+					{
+						name: 'Create Clip',
+						value: 'createClips',
+					},
+					{
+						name: 'Get Clip Status',
+						value: 'getClipStatus',
+					},
+				],
+				default: 'createClips',
+			},
+			...clipDescription,
+		],
+	};
+}
+
