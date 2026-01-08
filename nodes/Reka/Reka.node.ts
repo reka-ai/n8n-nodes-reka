@@ -1,4 +1,5 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { clipDescription } from './resources/clip';
 
 export class Reka implements INodeType {
 	description: INodeTypeDescription = {
@@ -27,7 +28,7 @@ export class Reka implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://api.reka.ai/v1',
+			baseURL: 'https://vision-agent.api.reka.ai/v1',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -43,139 +44,18 @@ export class Reka implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Create Clip',
+						name: 'Create Clip 3',
 						value: 'createClips',
 					},
 					{
-						name: 'Get Clip Status',
+						name: 'Get Clip Status 3',
 						value: 'getClipStatus',
 					},
 				],
 				default: 'createClips',
 			},
-			// Operations will go here
-			{
-				displayName: 'Operation',
-				name: 'operation',
-				type: 'options',
-				noDataExpression: true,
-				displayOptions: {
-					show: {
-						resource: ['createClips'],
-					},
-				},
-				options: [
-					{
-						name: 'POST',
-						value: 'post',
-						action: 'Create a clip',
-						description: 'Create a new clip job on Reka side',
-						routing: {
-							request: {
-								method: 'POST',
-								url: '/creator/reels',
-							},
-						},
-					},
-				],
-				default: 'post',
-			},
-			{
-				displayName: 'Operation',
-				name: 'operation',
-				type: 'options',
-				noDataExpression: true,
-				displayOptions: {
-					show: {
-						resource: ['getClipStatus'],
-					},
-				},
-				options: [
-					{
-						name: 'Get',
-						value: 'get',
-						action: 'Get clip status',
-						description: 'Get the status of a clip job on Reka side',
-						routing: {
-							request: {
-								method: 'GET',
-							},
-						},
-					},
-				],
-				default: 'get',
-			},
-			{
-				displayName: 'Job ID',
-				description: 'With Job to get the status for',
-				required: true,
-				name: 'jobId',
-				type: 'string',
-				routing: {
-					request: {
-						qs: {
-							id: '/{{$value}}'
-						}
-					}
-				},
-				default: '',
-				displayOptions: {
-					show: {
-						resource: ['getClipStatus'],
-					},
-				},
-			},
-			// {
-			// 	displayName: 'Date',
-			// 	description: 'Earth date',
-			// 	required: true,
-			// 	name: 'marsRoverDate',
-			// 	type: 'dateTime',
-			// 	default: '',
-			// 	displayOptions: {
-			// 		show: {
-			// 			resource: ['marsRoverPhotos'],
-			// 		},
-			// 	},
-			// 	routing: {
-			// 		request: {
-			// 			// You've already set up the URL. qs appends the value of the field as a query string
-			// 			qs: {
-			// 				earth_date: '={{ new Date($value).toISOString().substr(0,10) }}',
-			// 			},
-			// 		},
-			// 	},
-			// },
-			// Optional/additional fields will go here
-			// {
-			// 	displayName: 'Additional Fields',
-			// 	name: 'additionalFields',
-			// 	type: 'collection',
-			// 	default: {},
-			// 	placeholder: 'Add Field',
-			// 	displayOptions: {
-			// 		show: {
-			// 			resource: ['astronomyPictureOfTheDay'],
-			// 			operation: ['get'],
-			// 		},
-			// 	},
-			// 	options: [
-			// 		{
-			// 			displayName: 'Date',
-			// 			name: 'apodDate',
-			// 			type: 'dateTime',
-			// 			default: '',
-			// 			routing: {
-			// 				request: {
-			// 					// You've already set up the URL. qs appends the value of the field as a query string
-			// 					qs: {
-			// 						date: '={{ new Date($value).toISOString().substr(0,10) }}',
-			// 					},
-			// 				},
-			// 			},
-			// 		},
-			// 	],
-			// },
+			...clipDescription
+
 		],
 	};
 }
