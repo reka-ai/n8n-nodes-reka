@@ -1,5 +1,6 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { clipDescription } from './resources/clip';
+import { videoManagementDescription } from './resources/videoManagement';
 
 export class RekaVision implements INodeType {
 	description: INodeTypeDescription = {
@@ -50,10 +51,19 @@ export class RekaVision implements INodeType {
 						name: 'Get Clip Status',
 						value: 'getClipStatus',
 					},
+					{
+						name: 'List Video',
+						value: 'listVideos',
+					},
+					{
+						name: 'Get Video',
+						value: 'getVideo',
+					},
 				],
 				default: 'createClips',
 			},
 			...clipDescription,
+			...videoManagementDescription,
 		],
 	};
 }
