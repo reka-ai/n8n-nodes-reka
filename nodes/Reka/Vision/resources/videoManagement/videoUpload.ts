@@ -22,27 +22,27 @@ export const videoUploadParams: INodeProperties[] = [
 			},
 		},
 	},
-	// {
-	// 	displayName: 'Video File',
-	// 	description: 'Video file to upload',
-	// 	required: true,
-	// 	name: 'video_file',
-	// 	type: 'string',
-	// 	routing: {
-	// 		send: {
-	// 			type: 'body',
-	// 			property: 'video_file',
-	// 			value: '={{ $value }}',
-	// 		},
-	// 	},
-	// 	default: '',
-	// 	displayOptions: {
-	// 		show: {
-	// 			resource: ['videoManagement'],
-	// 			operation: ['uploadVideoFromFile'],
-	// 		},
-	// 	},
-	// },
+	{
+		displayName: 'Video File',
+		description: 'Video file to upload',
+		required: true,
+		name: 'video_file',
+		type: 'string',
+		routing: {
+			send: {
+				type: 'body',
+				property: 'video_file',
+				value: '={{ $value }}',
+			},
+		},
+		default: '',
+		displayOptions: {
+			show: {
+				resource: ['videoManagement'],
+				operation: ['uploadVideoFile'],
+			},
+		},
+	},
 	{
 		displayName: 'Video Name',
 		description: 'Name of the video',
@@ -60,7 +60,7 @@ export const videoUploadParams: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['videoManagement'],
-				operation: ['uploadVideoFromUrl'],
+				operation: ['uploadVideoFromUrl', 'uploadVideoFile'],
 			},
 		},
 	},
@@ -81,7 +81,7 @@ export const videoUploadParams: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['videoManagement'],
-				operation: ['uploadVideoFromUrl'],
+				operation: ['uploadVideoFromUrl', 'uploadVideoFile'],
 			},
 		},
 	},
@@ -96,7 +96,7 @@ export const videoUploadParams: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['videoManagement'],
-				operation: ['uploadVideoFromUrl'],
+				operation: ['uploadVideoFromUrl', 'uploadVideoFile'],
 			},
 		},
 		options: [

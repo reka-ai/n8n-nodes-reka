@@ -51,6 +51,18 @@ export const videoManagementDescription: INodeProperties[] = [
 				},
 			},
 			{
+				name: 'UPLOAD VIDEO FILE',
+				value: 'uploadVideoFile',
+				action: 'Upload video file',
+				description: 'Upload a video to your Reka account library using a file as source',
+				routing: {
+					request: {
+						method: 'POST',
+						url: '/videos/upload',
+					},
+				},
+			},
+			{
 				name: 'UPLOAD VIDEO FROM URL',
 				value: 'uploadVideoFromUrl',
 				action: 'Upload video by URL',
