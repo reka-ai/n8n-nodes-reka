@@ -1,6 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { getVideoParams } from './getVideo';
-// import { createClipParams } from './createClip';
+import { videoIdParams } from './videoId';
+import { videoUploadParams } from './videoUpload';
 
 
 export const videoManagementDescription: INodeProperties[] = [
@@ -17,14 +17,13 @@ export const videoManagementDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'LIST VIDEOS',
-				value: 'listVideos',
-				action: 'List videos',
-				description: 'List videos in your Reka account library',
+				name: 'DELETE VIDEO',
+				value: 'deleteVideo',
+				action: 'Delete video',
+				description: 'Delete video from your Reka account library',
 				routing: {
 					request: {
-						method: 'GET',
-						url: '/videos',
+						method: 'DELETE',
 					},
 				},
 			},
@@ -39,13 +38,37 @@ export const videoManagementDescription: INodeProperties[] = [
 					},
 				},
 			},
+			{
+				name: 'LIST VIDEOS',
+				value: 'listVideos',
+				action: 'List videos',
+				description: 'List videos in your Reka account library',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/videos',
+					},
+				},
+			},
+			{
+				name: 'UPLOAD VIDEO FROM URL',
+				value: 'uploadVideoFromUrl',
+				action: 'Upload video by URL',
+				description: 'Upload a video to your Reka account library using a URL as source',
+				routing: {
+					request: {
+						method: 'POST',
+						url: '/videos/upload',
+					},
+				},
+			},
 		],
 		default: 'listVideos',
 	},
 
 	// Parameters for Get Video
-	...getVideoParams,
+	...videoIdParams,
 
-	// Parameters for Create Clips
-	// ...createClipParams,
+	// Parameters to upload video
+	...videoUploadParams,
 ];

@@ -1,7 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 
-export const getVideoParams: INodeProperties[] = [
+export const videoIdParams: INodeProperties[] = [
 	{
 		displayName: 'Video ID',
 		description: 'Video ID to get the details for',
@@ -17,7 +17,7 @@ export const getVideoParams: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['videoManagement'],
-				operation: ['getVideo'],
+				operation: ['getVideo', 'deleteVideo'],
 			},
 		},
 	},
