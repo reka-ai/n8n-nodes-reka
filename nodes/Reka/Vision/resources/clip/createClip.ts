@@ -19,7 +19,8 @@ export const createClipParams: INodeProperties[] = [
 		default: '',
 		displayOptions: {
 			show: {
-				resource: ['createClips'],
+				resource: ['clip'],
+				operation: ['createClip'],
 			},
 		},
 	},
@@ -38,7 +39,8 @@ export const createClipParams: INodeProperties[] = [
 		default: 'Create an engaging short video highlighting the best moments',
 		displayOptions: {
 			show: {
-				resource: ['createClips'],
+				resource: ['clip'],
+				operation: ['createClip'],
 			},
 		},
 	},
@@ -52,7 +54,8 @@ export const createClipParams: INodeProperties[] = [
 		default: {},
 		displayOptions: {
 			show: {
-				resource: ['createClips']
+				resource: ['clip'],
+				operation: ['createClip'],
 			},
 		},
 		options: [
@@ -80,7 +83,7 @@ export const createClipParams: INodeProperties[] = [
 						property: 'generation_config.max_duration_seconds',
 					},
 				},
-				default: 60
+				default: 60,
 			},
 			{
 				displayName: 'Min Duration Seconds',
@@ -93,7 +96,7 @@ export const createClipParams: INodeProperties[] = [
 						property: 'generation_config.min_duration_seconds',
 					},
 				},
-				default: 30
+				default: 30,
 			},
 			{
 				displayName: 'Number of Generations',
@@ -106,7 +109,7 @@ export const createClipParams: INodeProperties[] = [
 						property: 'generation_config.num_generations',
 					},
 				},
-				default: 1
+				default: 1,
 			},
 			{
 				displayName: 'Subtitles',
@@ -119,7 +122,7 @@ export const createClipParams: INodeProperties[] = [
 						property: 'rendering_config.subtitles',
 					},
 				},
-				default: true
+				default: true,
 			},
 			{
 				displayName: 'Template',
@@ -142,8 +145,8 @@ export const createClipParams: INodeProperties[] = [
 						property: 'generation_config.template',
 					},
 				},
-				default: 'moments'
-			}
-		]
-	}
+				default: 'moments',
+			},
+		],
+	},
 ];

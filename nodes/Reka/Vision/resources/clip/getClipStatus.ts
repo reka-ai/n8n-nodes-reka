@@ -16,8 +16,9 @@ export const clipStatusParams: INodeProperties[] = [
 		default: '',
 		displayOptions: {
 			show: {
-				resource: ['getClipStatus'],
+				resource: ['clip'],
+				operation: ['getJobtatus'],
 			},
 		},
-	}
+	},
 ];

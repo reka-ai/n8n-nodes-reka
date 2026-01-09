@@ -44,23 +44,15 @@ export class RekaVision implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Create Clip',
-						value: 'createClips',
+						name: 'Clip',
+						value: 'clip',
 					},
 					{
-						name: 'Get Clip Status',
-						value: 'getClipStatus',
-					},
-					{
-						name: 'List Video',
-						value: 'listVideos',
-					},
-					{
-						name: 'Get Video',
-						value: 'getVideo',
+						name: 'Video Management',
+						value: 'videoManagement',
 					},
 				],
-				default: 'createClips',
+				default: 'clip',
 			},
 			...clipDescription,
 			...videoManagementDescription,

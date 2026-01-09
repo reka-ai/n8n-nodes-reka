@@ -16,7 +16,8 @@ export const getVideoParams: INodeProperties[] = [
 		default: '',
 		displayOptions: {
 			show: {
-				resource: ['getVideo'],
+				resource: ['videoManagement'],
+				operation: ['getVideo'],
 			},
 		},
 	},

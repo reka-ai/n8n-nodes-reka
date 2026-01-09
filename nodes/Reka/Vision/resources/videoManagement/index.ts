@@ -12,13 +12,13 @@ export const videoManagementDescription: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
-				resource: ['listVideos'],
+				resource: ['videoManagement'],
 			},
 		},
 		options: [
 			{
-				name: 'Get',
-				value: 'get',
+				name: 'LIST VIDEOS',
+				value: 'listVideos',
 				action: 'List videos',
 				description: 'List videos in your Reka account library',
 				routing: {
@@ -28,33 +28,19 @@ export const videoManagementDescription: INodeProperties[] = [
 					},
 				},
 			},
-		],
-		default: 'get',
-	},
-	{
-		displayName: 'Operation',
-		name: 'operation',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: {
-				resource: ['getVideo'],
-			},
-		},
-		options: [
 			{
-				name: 'Get',
-				value: 'get',
+				name: 'GET VIDEO',
+				value: 'getVideo',
 				action: 'Get video',
 				description: 'Get a video details from your Reka account library',
 				routing: {
 					request: {
-						method: 'GET'
+						method: 'GET',
 					},
 				},
 			},
 		],
-		default: 'get',
+		default: 'listVideos',
 	},
 
 	// Parameters for Get Video
