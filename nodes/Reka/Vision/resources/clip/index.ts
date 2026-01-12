@@ -12,13 +12,13 @@ export const clipDescription: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
-				resource: ['createClips'],
+				resource: ['clip'],
 			},
 		},
 		options: [
 			{
-				name: 'POST',
-				value: 'post',
+				name: 'CREATE CLIP',
+				value: 'createClip',
 				action: 'Create a clip',
 				description: 'Create a new clip job on Reka side',
 				routing: {
@@ -28,23 +28,9 @@ export const clipDescription: INodeProperties[] = [
 					},
 				},
 			},
-		],
-		default: 'post',
-	},
-	{
-		displayName: 'Operation',
-		name: 'operation',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: {
-				resource: ['getClipStatus'],
-			},
-		},
-		options: [
 			{
-				name: 'Get',
-				value: 'get',
+				name: 'GET JOB STATUS',
+				value: 'getJobtatus',
 				action: 'Get clip status',
 				description: 'Get the status of a clip job on Reka side',
 				routing: {
@@ -54,7 +40,7 @@ export const clipDescription: INodeProperties[] = [
 				},
 			},
 		],
-		default: 'get',
+		default: 'createClip',
 	},
 
 	// Parameters for Get Clip Status
