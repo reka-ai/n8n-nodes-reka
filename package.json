@@ -1,6 +1,6 @@
 {
 	"name": "@reka-ai/n8n-nodes-reka",
-	"version": "0.4.2",
+	"version": "0.4.3",
 	"description": "Implement nodes for n8n to interact with Reka APIs",
 	"license": "MIT",
 	"homepage": "https://reka.ai",
