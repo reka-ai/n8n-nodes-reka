@@ -58,7 +58,7 @@ export class RekaVision implements INodeType {
 						value: 'imageManagement',
 					},
 					{
-						name: 'Video Q&A',
+						name: 'Video Question & Answer',
 						value: 'videoQA',
 					},
 				],
