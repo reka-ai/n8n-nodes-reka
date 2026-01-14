@@ -18,8 +18,8 @@ export const videoChatParams: INodeProperties[] = [
 		default: 'What is happening in the video?',
 		displayOptions: {
 			show: {
-				resource: ['videoQA'],
-				operation: ['askquestion'],
+				resource: ['QA'],
+				operation: ['askVideoQuestion'],
 			},
 		},
 	},
@@ -40,8 +40,8 @@ export const videoChatParams: INodeProperties[] = [
 		default: 'user',
 		displayOptions: {
 			show: {
-				resource: ['videoQA'],
-				operation: ['askquestion'],
+				resource: ['QA'],
+				operation: ['askVideoQuestion'],
 			},
 		},
 	},
@@ -61,8 +61,8 @@ export const videoChatParams: INodeProperties[] = [
 		default: '',
 		displayOptions: {
 			show: {
-				resource: ['videoQA'],
-				operation: ['askquestion'],
+				resource: ['QA'],
+				operation: ['askVideoQuestion'],
 			},
 		},
 	},

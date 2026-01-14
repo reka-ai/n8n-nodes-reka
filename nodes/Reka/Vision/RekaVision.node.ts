@@ -2,7 +2,7 @@ import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { clipDescription } from './resources/clip';
 import { videoManagementDescription } from './resources/videoManagement';
 import { imageManagementDescription } from './resources/imageManagement';
-import { videoQADescription } from './resources/qa';
+import { QuestionAnswerDescription } from './resources/qa';
 
 export class RekaVision implements INodeType {
 	description: INodeTypeDescription = {
@@ -58,8 +58,8 @@ export class RekaVision implements INodeType {
 						value: 'imageManagement',
 					},
 					{
-						name: 'Video Question & Answer',
-						value: 'videoQA',
+						name: 'Question & Answer',
+						value: 'QA',
 					},
 				],
 				default: 'clip',
@@ -67,7 +67,7 @@ export class RekaVision implements INodeType {
 			...clipDescription,
 			...videoManagementDescription,
 			...imageManagementDescription,
-			...videoQADescription
+			...QuestionAnswerDescription,
 		],
 	};
 }
