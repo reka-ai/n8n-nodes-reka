@@ -11,12 +11,10 @@ Official Reka community node that provides various capability with AI Vision. (s
 ### Video Clipping
 
 - Automatically clip a video from a URL
-- Automatically clip a video from a file
 
 ### Vision
 
 - Question and Answer (Q&A) from video
-- Question and Answer (Q&A) from image
 
 ### Speech
 
@@ -49,7 +47,7 @@ We are working on a more detailed documentation, meanwhile have a look to this [
 
 If you find a bug or would like to add a feature, please read our [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contributing Guide](CONTRIBUTING.md).
 
-Feel free to open an issue or submit a PR—feedback and improvements are welcome.
+Feel free to open an issue or submit a feedback PR and improvements are welcome.
 
 ## License
 

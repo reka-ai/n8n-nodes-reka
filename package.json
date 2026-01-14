@@ -1,11 +1,21 @@
 {
 	"name": "@reka-ai/n8n-nodes-reka",
-	"version": "0.4.3",
-	"description": "Implement nodes for n8n to interact with Reka APIs",
+	"version": "0.4.4-beta.1",
+	"description": "Official n8n nodes to use Reka's AI in our workflows",
 	"license": "MIT",
 	"homepage": "https://reka.ai",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"reka",
+		"n8n",
+		"ai",
+		"vision",
+		"clipping",
+		"video clipping",
+		"vision ai",
+		"reka ai",
+		"video analysis",
+		"image analysis"
 	],
 	"author": {
 		"name": "Frank Boucher",
