@@ -33,7 +33,7 @@
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
 		"release:beta": "release-it --preRelease=beta --npm.tag=beta",
-		"prepublishOnly": "n8n-node prerelease"
+		"prepublishOnly": "npm run build"
 	},
 	"files": [
 		"dist"
