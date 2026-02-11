@@ -16,8 +16,7 @@ export class RekaApi implements ICredentialType {
 		dark: 'file:../icons/reka-stacked-offwhite.svg',
 	};
 
-	documentationUrl =
-		'https://docs.n8n.io/integrations/creating-nodes/build/declarative-style-node/';
+	documentationUrl = 'https://docs.reka.ai/quickstart';
 
 	properties: INodeProperties[] = [
 		{

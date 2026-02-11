@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
 import { clipDescription } from './resources/clip';
 import { videoManagementDescription } from './resources/videoManagement';
 import { imageManagementDescription } from './resources/imageManagement';
@@ -22,8 +22,8 @@ export class RekaVision implements INodeType {
 		defaults: {
 			name: 'Reka Vision',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'rekaApi',
