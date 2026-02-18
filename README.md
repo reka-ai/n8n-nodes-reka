@@ -11,11 +11,11 @@ Official Reka community node that provides various capability with AI Vision. (s
 ### Video Clipping
 
 - Automatically clip a video from a URL
-- Automatically clip a video from a file
 
 ### Vision
 
 - Question and Answer (Q&A) from video
+
 - Question and Answer (Q&A) from image
 
 ### Speech
@@ -38,6 +38,21 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 We are working on a more detailed documentation, meanwhile have a look to this [blog post](https://www.frankysnotes.com/2025/12/building-ai-powered-youtube-clipper.html) or [video](https://www.youtube.com/watch?v=6YV6K94m_FA) to learn How to Automate Clipping Using Reka's community node.
 
+### Clip
+
+From a existing video (ex: YouTube) generate a vertical or horizontal clip using AI. Specific your instructions in a prompt (ex: Create an engaging short video highlighting the best moments) and voila! Optionally you can add burned captions, specify the minimum and maximum duration of your clip. Once ready you will get your video clip with a suggestion of title, description and tags.
+
+### Q&A
+
+Ask any question about a image or a video and get the response quickly. 
+
+Example: 
+
+- Describe this image
+- Summarize this video
+- What's the color of the car in this photo
+
+
 ## Resources
 
 - **[n8n Node Documentation](https://docs.n8n.io/integrations/creating-nodes/)** - Complete guide to building nodes
@@ -49,7 +64,7 @@ We are working on a more detailed documentation, meanwhile have a look to this [
 
 If you find a bug or would like to add a feature, please read our [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contributing Guide](CONTRIBUTING.md).
 
-Feel free to open an issue or submit a PR—feedback and improvements are welcome.
+Feel free to open an issue or submit a feedback PR and improvements are welcome.
 
 ## License
 

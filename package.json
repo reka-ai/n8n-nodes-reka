@@ -1,11 +1,21 @@
 {
 	"name": "@reka-ai/n8n-nodes-reka",
 	"version": "0.4.5",
-	"description": "Implement nodes for n8n to interact with Reka APIs",
+	"description": "Official n8n nodes to use Reka's AI in our workflows",
 	"license": "MIT",
 	"homepage": "https://reka.ai",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"reka",
+		"n8n",
+		"ai",
+		"vision",
+		"clipping",
+		"video clipping",
+		"vision ai",
+		"reka ai",
+		"video analysis",
+		"image analysis"
 	],
 	"author": {
 		"name": "Frank Boucher",
@@ -21,8 +31,10 @@
 		"dev": "n8n-node dev",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
-		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
+		"release": "release-it --git.requireBranch=main",
+		"release:stable": "release-it --git.requireBranch=main",
+		"release:beta": "release-it --preRelease=beta --npm.tag=beta  --git.requireBranch=develop",
+		"prepublishOnly": "npm run build"
 	},
 	"files": [
 		"dist"
